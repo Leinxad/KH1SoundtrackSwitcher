@@ -81,7 +81,7 @@ function attach(timer)
 		elseif lastSelection == "Remastered" then
 			writeRemasteredMusic()
 		end
-		UDF1.CELabel1.setCaption("The Switcher is currently attached to the game")
+		UDF1.CELabel1.setCaption("Attached")
 		sound = createMemoryStream()
 		sound.loadFromFile(getCheatEngineDir() .. "sound.wav")
 		playSound(sound)
