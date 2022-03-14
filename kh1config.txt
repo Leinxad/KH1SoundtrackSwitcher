@@ -1,0 +1,6 @@
+On the next line write hotkey for changing to the Default Soundtrack
+7
+On the next line write hotkey for changing to the Classic Soundtrack
+8
+On the next line write hotkey for changing to the Remastered Soundtrack
+9
