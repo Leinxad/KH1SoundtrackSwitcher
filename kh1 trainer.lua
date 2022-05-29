@@ -61,7 +61,7 @@ function loadHotkeys()
 end
 
 function loadSettings()
-	settings=getSettings('KH2SoundtrackSwitcher')
+	settings=getSettings('KH1SoundtrackSwitcher')
 	if #settings.Value['lastSelection'] == 0 then
 		settings.Value['lastSelection'] = "Remastered"	
 	end
@@ -87,7 +87,7 @@ function attach(timer)
 			writeRemasteredMusic()
 		end
 		UDF1.CELabel1.setCaption("Attached")
-		if attachementSound == true then
+		if attachementSound == "1" then
 			sound = createMemoryStream()
 			sound.loadFromFile(getCheatEngineDir() .. "sound.wav")
 			playSound(sound)
