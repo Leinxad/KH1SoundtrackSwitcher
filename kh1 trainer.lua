@@ -26,6 +26,12 @@ function writeRemasteredMusic()
 	writeBytes(titleAddress,amusicRemastered)
 end
 
+function scanAOB(string, startAddress, endAddress, scanner)
+	scanner.firstScan(soExactValue, vtByteArray, nil, string, nil, startAddress, endAddress, "*X*C*W", nil, nil , true, nil, nil, nil)
+	scanner.waitTillDone()
+	return scanner.getOnlyResult()
+end
+
 function scanMusic()
 	m = createMemScan()
 	m.setOnlyOneResult(true)
@@ -34,12 +40,6 @@ function scanMusic()
 	titleAddress = scanAOB(titleString, diveAddress, 0xffffffffffffffff, m)
 	m.destroy()
 	scanned = true
-end
-
-function scanAOB(string, startAddress, endAddress, scanner)
-	scanner.firstScan(soExactValue, vtByteArray, nil, string, nil, startAddress, endAddress, "*X*C*W", nil, nil , true, nil, nil, nil)
-	scanner.waitTillDone()
-	return scanner.getOnlyResult()
 end
 
 function lines_from(file)
